@@ -102,6 +102,14 @@ void vendor_load_properties() {
             set_device_props("Xiaomi", "diting", "22081212UG", "ditingp_global", "Xiaomi 12T Pro");
         }
     }
+    else if (product == "cupid") {
+        if (region == "CN") { // China
+            set_device_props("Xiaomi", "cupid", "2201123C", "cupid", "Xiaomi 12");
+        }
+        else { // Global/EEA
+            set_device_props("Xiaomi", "cupid", "2201123G", "cupid_global", "Xiaomi 12");
+        }
+    }
 
     // Set hardware revision
     property_override("ro.boot.hardware.revision", GetProperty("ro.boot.hwversion", "").c_str());
