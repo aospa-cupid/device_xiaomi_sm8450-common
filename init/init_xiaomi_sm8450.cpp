@@ -3,7 +3,7 @@
    Copyright (C) 2016 The CyanogenMod Project.
    Copyright (C) 2019-2020 The LineageOS Project.
    Copyright (C) 2021 The Android Open Source Project.
-   Copyright (C) 2022-2023 Paranoid Android.
+   Copyright (C) 2022-2024 Paranoid Android.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are

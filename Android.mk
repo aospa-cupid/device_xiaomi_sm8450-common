@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2021 The Android Open Source Project
-#           (C) 2022-2023 Paranoid Android
+#           (C) 2022-2024 Paranoid Android
 #
 # SPDX-License-Identifier: Apache-2.0
 #
