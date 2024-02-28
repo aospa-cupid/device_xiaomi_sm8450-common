@@ -14,3 +14,6 @@ add_hwservice(hal_camera_default, hal_xiaomi_camera_hwservice)
 allow hal_camera_default public_adsprpcd_file:file r_file_perms;
 allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
 allow hal_camera_default sysfs_thermal:file rw_file_perms;
+
+# Allow QSPM hal service accessing camera
+hal_client_domain(hal_camera_default, vendor_hal_qspmhal)
