@@ -779,6 +779,10 @@ vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@2.0.so
 vendor/lib64/vendor.xiaomi.sensor.communicate@1.0.so
 
+# Sensors - ultrasound
+vendor/lib64/libultrasound_notify.so
+vendor/lib64/sensors.ultrasoundproximity.so
+
 # SOTER
 vendor/app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
