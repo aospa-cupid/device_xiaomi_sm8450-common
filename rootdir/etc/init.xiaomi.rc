@@ -81,10 +81,6 @@ service qrtr-lookup /vendor/bin/qrtr-lookup
 on property:sys.boot_completed=1
     start qrtr-lookup
 
-# Mi_thermald mode configuration
-on property:sys.boot_completed=1
-    write /sys/devices/virtual/thermal/thermal_message/sconfig 20
-
 service citsensor-hal-2-0 /vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
     class late_start
     user system
