@@ -394,7 +394,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.sensors.enable.mag_filter=true
+    persist.vendor.sensors.enable.mag_filter=true \
+    ro.vendor.sensors.xiaomi.single_tap=true \
+    ro.vendor.sensors.xiaomi.udfps=true
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 31
