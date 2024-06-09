@@ -396,7 +396,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.sensors.enable.mag_filter=true \
     ro.vendor.sensors.xiaomi.single_tap=true \
-    ro.vendor.sensors.xiaomi.udfps=true
+    ro.vendor.sensors.xiaomi.udfps=true \
+    ro.vendor.sensors.xiaomi.double_tap=true
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 31
