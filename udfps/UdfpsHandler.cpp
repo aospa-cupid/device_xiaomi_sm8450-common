@@ -96,7 +96,7 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
         disp_fd_ = android::base::unique_fd(open(DISP_FEATURE_PATH, O_RDWR));
 
         std::string fpVendor = android::base::GetProperty("persist.vendor.sys.fp.vendor", "none");
-        LOG(DEBUG) << __func__ << "fingerprint vendor is: " << fpVendor;
+        LOG(INFO) << __func__ << "fingerprint vendor is: " << fpVendor;
         isFpcFod = fpVendor == "fpc_fod";
 
         // Thread to notify fingeprint hwmodule about fod presses
@@ -176,7 +176,7 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
                 }
 
                 int value = response->data[0];
-                LOG(DEBUG) << "received data: " << std::bitset<8>(value);
+                LOG(INFO) << "received data: " << std::bitset<8>(value);
 
                 bool localHbmUiReady = value & LOCAL_HBM_UI_READY;
 
@@ -187,7 +187,7 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
     }
 
     void onFingerDown(uint32_t x, uint32_t y, float /*minor*/, float /*major*/) {
-        LOG(DEBUG) << __func__ << "x: " << x << ", y: " << y;
+        LOG(INFO) << __func__ << "x: " << x << ", y: " << y;
         // Track x and y coordinates
         lastPressX = x;
         lastPressY = y;
@@ -197,32 +197,32 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
     }
 
     void onFingerUp() {
-        LOG(DEBUG) << __func__;
+        LOG(INFO) << __func__;
         // Notify touchscreen about press status
         setFingerDown(false);
     }
 
     void onAcquired(int32_t result, int32_t vendorCode) {
-        LOG(DEBUG) << __func__ << " result: " << result << " vendorCode: " << vendorCode;
+        LOG(INFO) << __func__ << " result: " << result << " vendorCode: " << vendorCode;
         if (result == FINGERPRINT_ACQUIRED_GOOD) {
             setFingerDown(false);
         }
     }
 
     void cancel() {
-        LOG(DEBUG) << __func__;
+        LOG(INFO) << __func__;
     }
 
     void preEnroll() {
-        LOG(DEBUG) << __func__;
+        LOG(INFO) << __func__;
     }
 
     void enroll() {
-        LOG(DEBUG) << __func__;
+        LOG(INFO) << __func__;
     }
 
     void postEnroll() {
-        LOG(DEBUG) << __func__;
+        LOG(INFO) << __func__;
     }
 
   private:
