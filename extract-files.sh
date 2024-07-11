@@ -14,6 +14,9 @@ function blob_fixup() {
             ;;
         vendor/etc/camera/pureShot_parameter.xml|vendor/etc/camera/pureView_parameter.xml)
             sed -i 's/=\([0-9]\+\)>/="\1">/g' "${2}"
+	    ;;
+	vendor/lib64/libxmi_high_dynamic_range_cdsp.so)
+	    llvm-strip --strip-debug "${2}"
             ;;
     esac
 }
