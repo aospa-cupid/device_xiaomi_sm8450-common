@@ -79,12 +79,13 @@ function blob_fixup() {
             "${PATCHELF}" --replace-needed "ls_nq_client-v1.so" "ls_nq_client.so" "${2}"
             "${PATCHELF}" --replace-needed "se_nq_extn_client-v1.so" "se_nq_extn_client.so" "${2}"
             ;;
-        vendor/etc/camera/*_motiontuning.xml)
-            sed -i 's/xml=version/xml\ version/g' "${2}"
+        vendor/etc/camera/*_motiontuning.xml | vendor/etc/camera/cupid_enhance_motiontuning.xml | vendor/etc/camera/cupid_motiontuning.xml)
+            sed -i 's/xml=version/xml version/g'  "${2}"
             ;;
-        vendor/etc/camera/pureView_parameter.xml)
-            sed -i "s/=\([0-9]\+\)>/=\"\1\">/g" "${2}"
+        vendor/etc/camera/pureView_parameter.xml | vendor/etc/camera/pureShot_parameter.xml)
+            sed -i 's/=\([0-9]\+\)>/="\1">/g' "${2}"
             ;;
+
         vendor/etc/qcril_database/upgrade/config/6.0_config.sql)
             sed -i '/persist.vendor.radio.redir_party_num/ s/true/false/g' "${2}"
             ;;
