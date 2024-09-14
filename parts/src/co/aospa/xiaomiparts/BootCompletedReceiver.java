@@ -53,7 +53,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         PocketService.startService(context);
         NfcCameraService.startService(context);
         TouchOrientationService.startService(context);
-        ThermalUtils.startService(context);
+        ThermalUtils.getInstance(context).startService();
         GestureUtils.onBootCompleted(context);
         overrideHdrTypes(context);
     }
